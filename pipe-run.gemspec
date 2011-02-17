@@ -18,11 +18,13 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
     "README.md",
     "Rakefile",
     "VERSION",
-    "lib/pipe-run.rb"
+    "lib/pipe-run.rb",
+    "pipe-run.gemspec"
   ]
   s.homepage = %q{https://github.com/martinkozak/pipe-run}
   s.licenses = ["MIT"]
