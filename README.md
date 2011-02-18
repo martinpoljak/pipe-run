@@ -1,5 +1,5 @@
 Pipe Run
-===============
+========
 
 **Pipe Run** runs command and returns its standard output in one call:
 
