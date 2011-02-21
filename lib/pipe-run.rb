@@ -9,13 +9,22 @@ class Pipe
 
     ##
     # Runs the command and returns its standard output.
-    # Blocking.
+    #
+    # If block is given, treat call as non-blocking. In that case, 
+    # +em-pipe-run+ file must be loaded.
     #
     # @param [String] command command for run
+    # @param [Proc] block block for giving back the results
     # @return [String] command output
     #
 
-    def self.run(command)
+    def self.run(command, &block)
+        if not block.nil?
+            return self.run_nonblock(command, &block)
+        end
+        
+        ###
+        
         pipe = File.popen(command, "r")
         
         result = pipe.read

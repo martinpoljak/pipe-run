@@ -4,9 +4,21 @@ Pipe Run
 **Pipe Run** runs command and returns its standard output in one call:
 
     require "pipe-run"
-    output = Pipe.run("date")
+    output = Pipe.run("date")       # blocking
     
     puts output     # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
+    
+### Asynchronous Use
+
+In case, `eventmachine` is available, non-blocking run of the command is 
+possible using `#run_nonblock` or `#run` with block given, defined in 
+`em-pipe-run` file. So for example:
+
+    require "em-pipe-run"
+    
+    Pipe.run("date") do |output|    # non-blocking
+        puts output     # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
+    end
     
 Contributing
 ------------
