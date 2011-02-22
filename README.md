@@ -16,8 +16,10 @@ possible using `#run_nonblock` or `#run` with block given, defined in
 
     require "em-pipe-run"
     
-    Pipe.run("date") do |output|    # non-blocking
-        puts output     # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
+    EM::run do
+        Pipe.run("date") do |output|    # non-blocking
+            puts output     # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
+        end
     end
     
 Contributing
