@@ -10,7 +10,7 @@ Pipe Run
     
 ### Asynchronous Use
 
-In case, `eventmachine` is available, non-blocking run of the command is 
+In case, [`eventmachine`][1] is available, non-blocking run of the command is 
 possible using `#run_nonblock` or `#run` with block given, defined in 
 `em-pipe-run` file. So for example:
 
@@ -38,5 +38,6 @@ Copyright
 Copyright &copy; 2010 &ndash; 2011 [Martin Kozák][3]. See `LICENSE.txt` for
 further details.
 
+[1]: http://rubyeventmachine.com/
 [2]: http://github.com/martinkozak/qrpc/issues
 [3]: http://www.martinkozak.net/
