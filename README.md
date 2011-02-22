@@ -6,7 +6,7 @@ Pipe Run
     require "pipe-run"
     output = Pipe.run("date")       # blocking
     
-    puts output     # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
+    puts output         # will print out for example 'Thu Feb 17 17:22:18 CET 2011'
     
 ### Asynchronous Use
 

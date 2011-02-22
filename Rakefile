@@ -16,7 +16,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "pipe-run"
   gem.homepage = "https://github.com/martinkozak/pipe-run"
   gem.license = "MIT"
-  gem.summary = 'Runs command and returns its standard output in one call.'
+  gem.summary = 'Runs command and returns its standard output in one call. Both synchronous and asynchronous (with eventmachine) running is supported.'
   gem.email = "martinkozak@martinkozak.net"
   gem.authors = ["Martin Kozák"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
