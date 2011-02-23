@@ -39,5 +39,5 @@ Copyright &copy; 2010 &ndash; 2011 [Martin Kozák][3]. See `LICENSE.txt` for
 further details.
 
 [1]: http://rubyeventmachine.com/
-[2]: http://github.com/martinkozak/qrpc/issues
+[2]: http://github.com/martinkozak/pipe-run/issues
 [3]: http://www.martinkozak.net/
