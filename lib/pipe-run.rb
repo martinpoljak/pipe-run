@@ -20,6 +20,10 @@ class Pipe
 
     def self.run(command, &block)
         if not block.nil?
+            if not self.respond_to? :run_nonblock
+                require "em-pipe-run"
+            end
+            
             return self.run_nonblock(command, &block)
         end
         

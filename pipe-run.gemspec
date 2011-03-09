@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Martin Kozák"]
-  s.date = %q{2011-02-22}
+  s.date = %q{2011-03-09}
   s.email = %q{martinkozak@martinkozak.net}
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{https://github.com/martinkozak/pipe-run}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
+  s.rubygems_version = %q{1.6.1}
   s.summary = %q{Runs command and returns its standard output in one call. Both synchronous and asynchronous (with eventmachine) running is supported.}
 
   if s.respond_to? :specification_version then
