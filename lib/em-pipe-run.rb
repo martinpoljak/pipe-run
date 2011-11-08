@@ -21,7 +21,11 @@ class Pipe
         ##
         # Holds pipe output buffer.
         #
+        # @returns [String] buffer content
+        # @since 0.3.0
+        #
         
+        attr_accessor :buffer
         @buffer
         
         ##
@@ -61,11 +65,11 @@ class Pipe
     end
     
     ##
-    # Runs the command and returns its standard output.
-    # Blocking.
+    # Runs the command and yields its standard output.
     #
     # @param [String] command command for run
     # @param [Proc] block callback for giving back the results
+    # @yield [String] command standard output
     # @since 0.2.0
     #
 
@@ -73,5 +77,47 @@ class Pipe
         pipe = File.popen(command, "r")
         EM::attach(pipe, Receiver, block)
     end
-    
+
+    ##
+    # Runs the command and yields both its standard output
+    # and error output.
+    #
+    # @param [String] command command for run
+    # @param [Proc] block callback for giving back the results
+    # @yield [String] command standard output
+    # @yield [String] command erroroutput
+    # @since 0.3.0
+    #
+
+    def self.run_nonblock2(command, &block)
+        begin
+            stdin, stdout, stderr = Open3.popen3(command)
+        rescue NameError
+            require "open3"
+            retry
+        end
+        
+        outval = nil
+        errval = nil
+        
+        yielder = Proc::new do
+            if (not outval.nil?) and (not errval.nil?)
+                yield outval, errval
+            end 
+        end
+                
+        outcall = Proc::new do |_outval|
+             outval = _outval
+             yielder.call()
+        end
+        
+        errcall = Proc::new do |_errval|
+             errval = _errval
+             yielder.call()
+        end
+        
+        EM::attach(stdout, Receiver, outcall)
+        EM::attach(stderr, Receiver, errcall)
+    end
+
 end
