@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{pipe-run}
-  s.version = "0.2.1"
+  s.name = "pipe-run"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Martin Kozák"]
-  s.date = %q{2011-03-09}
-  s.email = %q{martinkozak@martinkozak.net}
+  s.authors = ["Martin Koz\u{e1}k"]
+  s.date = "2011-11-08"
+  s.email = "martinkozak@martinkozak.net"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
@@ -25,27 +25,28 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/em-pipe-run.rb",
     "lib/pipe-run.rb",
-    "pipe-run.gemspec"
+    "pipe-run.gemspec",
+    "test.rb"
   ]
-  s.homepage = %q{https://github.com/martinkozak/pipe-run}
+  s.homepage = "https://github.com/martinkozak/pipe-run"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.1}
-  s.summary = %q{Runs command and returns its standard output in one call. Both synchronous and asynchronous (with eventmachine) running is supported.}
+  s.rubygems_version = "1.8.11"
+  s.summary = "Executes shell command and returns its outputs in single call. Both synchronous and asynchronous (with EventMachine) executing is supported."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_development_dependency(%q<bundler>, [">= 1.0.0"])
+      s.add_development_dependency(%q<jeweler>, [">= 1.5.2"])
     else
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+      s.add_dependency(%q<bundler>, [">= 1.0.0"])
+      s.add_dependency(%q<jeweler>, [">= 1.5.2"])
     end
   else
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
+    s.add_dependency(%q<bundler>, [">= 1.0.0"])
+    s.add_dependency(%q<jeweler>, [">= 1.5.2"])
   end
 end
 
